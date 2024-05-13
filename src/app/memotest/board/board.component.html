@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="memory-game">
+        <div *ngFor="let card of cards; let i = index" class="card" (click)="flipCard(i)"
+            [ngClass]="{ 'flipped': card.flipped, 'matched': card.matched }">
+            <div class="card-inner">
+                <div class="card-face front">
+                    {{ card.flipped || card.matched ? '' : '?' }}
+                </div>
+                <div class="card-face back" [style.backgroundImage]="'url('+ 'assets/images/' + card.image + ')'"></div>
+            </div>
+        </div>
+    </div>
+</div>
