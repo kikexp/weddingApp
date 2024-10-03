@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "weddingApp": {
+    "weddingapp": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -63,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "weddingApp:build:production"
+              "buildTarget": "weddingapp:build:production"
             },
             "development": {
-              "buildTarget": "weddingApp:build:development"
+              "buildTarget": "weddingapp:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -74,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "weddingApp:build"
+            "buildTarget": "weddingapp:build"
           }
         },
         "test": {

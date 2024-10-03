@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { ScoreService } from '../score.service';
 interface Card {
   image: string;
   flipped: boolean;
@@ -22,7 +23,8 @@ export class BoardComponent {
   moves = 0;
   flippedIndexes: any;
 
-  constructor() {
+  constructor(
+    private scoreService: ScoreService) {
     this.loadImages()
     this.shuffleCards();
   }
@@ -89,8 +91,8 @@ export class BoardComponent {
 
 
 
-  saveScore(playerName: string | null, moves: number) {
-    // Aquí puedes implementar la lógica para guardar el puntaje
+  async saveScore(playerName: string | null, moves: number) {
+    await this.scoreService.addScore({ playerName, moves });
   }
 
 }
